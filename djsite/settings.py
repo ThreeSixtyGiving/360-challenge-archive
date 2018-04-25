@@ -125,3 +125,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+try:
+    from djsite.local_settings import *  # noqa: F401, F403
+except Exception:
+    pass
