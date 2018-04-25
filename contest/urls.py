@@ -1,9 +1,9 @@
 from django.urls import path
 
-from contest.views import home, submition
+from contest.views import index, submition
 
 
 urlpatterns = [
-    path('', home, name='contest_home'),
+    path('', index, name='contest_index'),
     path('submition', submition, name='contest_submition'),
 ]

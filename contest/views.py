@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
 
-def home(request):
-    return render(request, 'contest/home.html')
+def index(request):
+    return render(request, 'contest/index.html')
 
 
 def submition(request):
