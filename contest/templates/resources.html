@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<!-- URL HERE -->"/>
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content="<!-- DESCRIPTION HERE -->"/>
+    <meta property="og:description" content="<!-- DESCRPTION HERE -->" />
+
+    <title></title>
+
+    <link rel="stylesheet" href="/360giving-prototype/vendor/normalize.css">
+    <link rel="stylesheet" href="/360giving-prototype/css/styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/nri0jbb.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <nav class="main-nav">
+      <a class="" href="/360giving-prototype/resources.html">Resources</a>    
+      <a class="" href="/360giving-prototype/faq.html">FAQ</a>
+      <a class="" href="/360giving-prototype/terms-and-conditions.html">T&C</a>    
+    </nav>    
+    
+    <main class="resources-page">
+  <div class="page-title">
+    <div class="wrapper">
+      <h1><a href="/360giving-prototype/">Digging the Data</a></h1>  
+    </div>  
+  </div>
+    
+  <header class="page-section page-section--red">
+    <div class="wrapper">
+      <a id="back-button" href="/360giving-prototype/" class="button button--clean">
+        <i class="material-icons">arrow_back</i> Back
+      </a>
+    </div>
+    <div class="wrapper">
+      <h1 class="big-title">Resources</h1>
+      <h3>This page contains useful resources to help with your analysis.</3>
+      <h2>know the context</h2>
+      <h3>First, know the context. Learn about the UK Grantmaking Sector here:</h3>
+      <a class="button" href="https://data.ncvo.org.uk/category/almanac/voluntary-sector/introduction/">NCVO Almanac</a>
+      <a class="button" href="https://www.acf.org.uk/policy-practice/research-publications/foundation-giving-trends-2017/" title="Association of Charitable Foundations (ACF) - Giving Trends 2017">ACF - Giving Trends 2017</a>
+  </header>
+
+  <section class="page-section page-section--blue">
+      <div class="wrapper">
+        <h2>How to get hold of our data?</h2>
+        <div class="panel-container">
+          <div class="panel">
+            <h3>GrantNav</h3>
+            <p>Our searchable dataset for all of out the grants that are published in 360Giving format. We are using elasticsearch so you can look for terms and keywords in the different field!</p>
+            <p>You can search it <a href="http://grantnav.threesixtygiving.org/" target="_blank">here</a> or download the whole data dump here: </p>
+            <a class="button" href="http://grantnav.threesixtygiving.org/api/grants.json" target="_blank">JSON</a>
+            <a class="button" href="http://grantnav.threesixtygiving.org/api/grants.csv" target="_blank">CSV</a>
+          </div>
+          <div class="panel">
+            <h3>REDASH</h3>
+            <p>A query editor that allows you to query our data in SQL. We added to Redash our GrantNav dump file for April 2018. All you need to do is to log in with your Google Account.</p>
+            <a class="button" href="https://app.redash.io/360giving/queries/new" target="_blank">REDASH</a>
+          </div>
+        </div>
+      </div>
+  </section>
+  
+  <section class="page-section page-section--purple">
+    <div class="wrapper">
+      <h2 class="title--white">Other Helpful Datasets</h2>
+      <ul class="link-list">
+        <h4>UK Government Data</h4>
+        <li><a href="https://data.gov.uk/" target="_blank">UK Data Portal has many datasets that might be useful for your analysis.</a></li>
+        <li><a href="https://www.gov.uk/government/organisations/companies-house " target="_blank">Companies House - some organisations might also be registered as companies</a></li>
+        <li><a href="https://opencorporates.com" target="_blank">OpenCorporates - the largest open database of companies and company data in the world</a></li>
+        <h4>Geographical Data</h4>
+        <li><a href="http://geoportal.statistics.gov.uk/" target="_blank">UK Geographical Portal: a valuable data source for any UK geographical analysis.</a></li>
+        <li><a href="https://www.ordnancesurvey.co.uk/business-and-government/products/boundary-line.html" target="_blank">OS Boundry line</a></li>
+        <h4>Charity Data</h4>
+        <li><a href="http://apps.charitycommission.gov.uk/showcharity/registerofcharities/RegisterHomePage.aspx" target="_blank">Charity Commission charities finder</a></li>
+        <li><a href="https://findthatcharity.uk" target="_blank">Find that Charity - a search engine for UK charities</a></li>
+        <li><a href="https://charitybase.uk " target="_blank">Charity Base - a comprehensive database of UK charity data containing details on the activities, history, areas of operation and finances of 350,000 charities and their subsidiaries</a></li>
+        <!-- <li><a href="" target="_blank"></a></li> -->
+      </ul>
+    </div>
+  </section>
+</main>
+  
+
+
+    
+    <footer id="footer">
+      <h2>Partners</h2>
+      <img src="/360giving-prototype/images/360giving-logo.png" alt="">
+      <img class="digging-data" src="/360giving-prototype/images/digging-the-data-logo.png" alt="">
+      
+      
+    </footer>
+    
+    <a class="by-line" href="http://ccmdesign.ca" target="_blank" title="Website designed and developed by ccm.design">by ccm.design</a>    
+    
+    <script src="/360giving-prototype/vendor/jquery-3.3.1.min.js"></script>
+    <script src="/360giving-prototype/js/scripts.js"></script>
+  </body>
+</html>
