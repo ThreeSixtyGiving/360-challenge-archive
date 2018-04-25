@@ -21,21 +21,21 @@
 
   <body>
     <nav class="main-nav">
-      <a class="" href="/static/resources.html">Resources</a>    
-      <a class="" href="/static/faq.html">FAQ</a>
-      <a class="" href="/static/terms-and-conditions.html">T&C</a>    
-    </nav>    
-    
+      <a class="" href="{% url 'contest_resources' %}">Resources</a>
+      <a class="" href="{% url 'contest_faq' %}">FAQ</a>
+      <a class="" href="{% url 'contest_terms_and_conditions' %}">T&C</a>
+    </nav>
+
     <main class="resources-page">
   <div class="page-title">
     <div class="wrapper">
-      <h1><a href="/static/">Digging the Data</a></h1>  
-    </div>  
+      <h1><a href="{% url 'contest_index' %}">Digging the Data</a></h1>
+    </div>
   </div>
-    
+
   <header class="page-section page-section--blue">
     <div class="wrapper">
-      <a id="back-button" href="/static/" class="button button--clean">
+      <a id="back-button" href="{% url 'contest_index' %}" class="button button--clean">
         <i class="material-icons">arrow_back</i> Back
       </a>
     </div>
@@ -49,28 +49,28 @@
         <ul class="faq">
           <li class="faq__item">
             <h3>How do we define user-led organisations?</h3>
-            <p>User-led organisations are organisations that are run by and controlled by people who use support services. You can find user-led organisations in <a href="http://grantnav.threesixtygiving.org/" target="_blank">GrantNav</a> by typing ‘user-led’ in the grants description field. If you are using other datasets, we allow a broad understanding of the term, e.g. user-led, community-led, patient-led, youth-led. Please provide a short justification of your chosen groups, explaining how they fall into the user-led category.</p>    
+            <p>User-led organisations are organisations that are run by and controlled by people who use support services. You can find user-led organisations in <a href="http://grantnav.threesixtygiving.org/" target="_blank">GrantNav</a> by typing ‘user-led’ in the grants description field. If you are using other datasets, we allow a broad understanding of the term, e.g. user-led, community-led, patient-led, youth-led. Please provide a short justification of your chosen groups, explaining how they fall into the user-led category.</p>
           </li>
           <li class="faq__item">
             <h3>How many years should I be looking at?</h3>
-            <p>It depends. Different grantmakers publish data covering different years. Because the 360Giving dataset varies across time, you can select the time period you want to analyse.</p>    
+            <p>It depends. Different grantmakers publish data covering different years. Because the 360Giving dataset varies across time, you can select the time period you want to analyse.</p>
           </li>
           <li class="faq__item">
             <h3>Are there any themes you want us to consider?</h3>
-            <p>We want to you define the theme or themes you want to focus on and justify your choice in accordance with the data you decide to use.</p>    
+            <p>We want to you define the theme or themes you want to focus on and justify your choice in accordance with the data you decide to use.</p>
           </li>
           <h2>General Questions</h2>
           <li class="faq__item">
             <h3>What is considered to be a “data visualisation?</h3>
-            <p>A data visualisation is representation of data in a visual format that aims to convey difficult concepts in the underlying dataset in a more user-friendly form.</p>    
+            <p>A data visualisation is representation of data in a visual format that aims to convey difficult concepts in the underlying dataset in a more user-friendly form.</p>
           </li>
           <li class="faq__item">
             <h3>Can I use additional data sets?</h3>
-            <p>All entries must use the 360Giving dataset, but the use other datasets is encouraged in order to fully answer the Challenge questions.</p>    
+            <p>All entries must use the 360Giving dataset, but the use other datasets is encouraged in order to fully answer the Challenge questions.</p>
           </li>
           <li class="faq__item">
             <h3>What form can my visualisation take?</h3>
-            <p>We will accept a range of media including interactive web applications, graphic images and videos. If you do create an interactive application (Javascript, Flash, etc.), it must function in a normal browser environment and you must host it on your own site. </p>    
+            <p>We will accept a range of media including interactive web applications, graphic images and videos. If you do create an interactive application (Javascript, Flash, etc.), it must function in a normal browser environment and you must host it on your own site. </p>
           </li>
           <li class="faq__item">
             <h3>Under what copyright should my visualisation be released?</h3>
@@ -78,15 +78,15 @@
           </li>
           <li class="faq__item">
             <h3>Can I submit more than one entry?</h3>
-            <p>You can submit up to two data visualisations, one for each question. </p>    
+            <p>You can submit up to two data visualisations, one for each question. </p>
           </li>
           <li class="faq__item">
             <h3>Are team entries allowed?</h3>
-            <p>Yes, we accept entries from teams of up to eight people.</p>    
+            <p>Yes, we accept entries from teams of up to eight people.</p>
           </li>
           <li class="faq__item">
             <h3>Can I submit my own entries in addition to my team’s entries?</h3>
-            <p>Yes, but you can only submit two entries in total. </p>    
+            <p>Yes, but you can only submit two entries in total. </p>
           </li>
           <li class="faq__item">
             <h3>Can I edit my entry after I have submitted it?</h3>
@@ -94,7 +94,7 @@
           </li>
           <li class="faq__item">
             <h3>When is the deadline for submissions?</h3>
-            <p>15<sup>th</sup> July 2018 at 11:59:59 pm British Summer Time (BST).</p>    
+            <p>15<sup>th</sup> July 2018 at 11:59:59 pm British Summer Time (BST).</p>
           </li>
           <li class="faq__item">
             <h3>How will the winning entries be selected? </h3>
@@ -107,38 +107,38 @@
           </li>
           <li class="faq__item">
             <h3>When will you announce the results? </h3>
-            <p>Finalists will be notified between 1<sup>st</sup> July and 1<sup>st</sup> August 2018 and publicly announced in mid-August. The winners will be announced in September.</p>    
+            <p>Finalists will be notified between 1<sup>st</sup> July and 1<sup>st</sup> August 2018 and publicly announced in mid-August. The winners will be announced in September.</p>
           </li>
           <li class="faq__item">
             <h3>What are the prizes?</h3>
-            <p>It is our intention - depending on the number of submissions and their quality - to make an award of between £100 and £500 to each entry that meets our submission criteria. Grand awards of £6,000, £4,000 and £2,000 will be announced by September.</p>    
+            <p>It is our intention - depending on the number of submissions and their quality - to make an award of between £100 and £500 to each entry that meets our submission criteria. Grand awards of £6,000, £4,000 and £2,000 will be announced by September.</p>
           </li>
           <li class="faq__item">
             <h3>I have more questions about the competition. Who should I contact?</h3>
-            <p>Please post any questions about the competition on our Discussion Forum, where they will be answered promptly: <a href="https://forum.threesixtygiving.org/" target="_blank">https://forum.threesixtygiving.org</a> </p>    
+            <p>Please post any questions about the competition on our Discussion Forum, where they will be answered promptly: <a href="https://forum.threesixtygiving.org/" target="_blank">https://forum.threesixtygiving.org</a> </p>
           </li>
           <li class="faq__item">
             <h3>How will my submission be hosted?</h3>
-            <p>Your visualisation be hosted on our submissions site. See the <a href="/static/terms-and-conditions.html">Terms & Conditions</a> for more details.</p>    
+            <p>Your visualisation be hosted on our submissions site. See the <a href="{% url 'contest_terms_and_conditions' %}">Terms & Conditions</a> for more details.</p>
           </li>
         </ul>
       </div>
   </section>
 </main>
-  
 
 
-    
+
+
     <footer id="footer">
       <h2>Partners</h2>
       <img src="/static/images/360giving-logo.png" alt="">
       <img class="digging-data" src="/static/images/digging-the-data-logo.png" alt="">
-      
-      
+
+
     </footer>
-    
-    <a class="by-line" href="http://ccmdesign.ca" target="_blank" title="Website designed and developed by ccm.design">by ccm.design</a>    
-    
+
+    <a class="by-line" href="http://ccmdesign.ca" target="_blank" title="Website designed and developed by ccm.design">by ccm.design</a>
+
     <script src="/static/vendor/jquery-3.3.1.min.js"></script>
     <script src="/static/js/scripts.js"></script>
   </body>

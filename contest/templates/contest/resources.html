@@ -21,21 +21,21 @@
 
   <body>
     <nav class="main-nav">
-      <a class="" href="/static/resources.html">Resources</a>    
-      <a class="" href="/static/faq.html">FAQ</a>
-      <a class="" href="/static/terms-and-conditions.html">T&C</a>    
-    </nav>    
-    
+      <a class="" href="{% url 'contest_resources' %}">Resources</a>
+      <a class="" href="{% url 'contest_faq' %}">FAQ</a>
+      <a class="" href="{% url 'contest_terms_and_conditions' %}">T&C</a>
+    </nav>
+
     <main class="resources-page">
   <div class="page-title">
     <div class="wrapper">
-      <h1><a href="/static/">Digging the Data</a></h1>  
-    </div>  
+      <h1><a href="{% url 'contest_index' %}">Digging the Data</a></h1>
+    </div>
   </div>
-    
+
   <header class="page-section page-section--red">
     <div class="wrapper">
-      <a id="back-button" href="/static/" class="button button--clean">
+      <a id="back-button" href="{% url 'contest_index' %}" class="button button--clean">
         <i class="material-icons">arrow_back</i> Back
       </a>
     </div>
@@ -67,7 +67,7 @@
         </div>
       </div>
   </section>
-  
+
   <section class="page-section page-section--purple">
     <div class="wrapper">
       <h2 class="title--white">Other Helpful Datasets</h2>
@@ -88,20 +88,20 @@
     </div>
   </section>
 </main>
-  
 
 
-    
+
+
     <footer id="footer">
       <h2>Partners</h2>
       <img src="/static/images/360giving-logo.png" alt="">
       <img class="digging-data" src="/static/images/digging-the-data-logo.png" alt="">
-      
-      
+
+
     </footer>
-    
-    <a class="by-line" href="http://ccmdesign.ca" target="_blank" title="Website designed and developed by ccm.design">by ccm.design</a>    
-    
+
+    <a class="by-line" href="http://ccmdesign.ca" target="_blank" title="Website designed and developed by ccm.design">by ccm.design</a>
+
     <script src="/static/vendor/jquery-3.3.1.min.js"></script>
     <script src="/static/js/scripts.js"></script>
   </body>
