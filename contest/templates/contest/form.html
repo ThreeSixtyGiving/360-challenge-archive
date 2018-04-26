@@ -36,7 +36,7 @@
 
   <header class="form-header">
     <div class="wrapper">
-      <a id="back-button"href="{% url 'contest_index' %}" class="button button--clean">
+      <a id="back-button" href="{% url 'contest_index' %}" class="button button--clean">
         <i class="material-icons">arrow_back</i> Back
       </a>
     </div>
@@ -99,11 +99,13 @@
 </main>
 
     <footer id="footer">
-      <h2>Partners</h2>
-      <img src="/static/images/360giving-logo.png" alt="">
-      <img class="digging-data" src="/static/images/digging-the-data-logo.png" alt="">
-
-
+      <div class="wrapper panel-container">
+        <div>
+          <img src="/static/images/360giving-logo.png" alt="360Giving">
+        </div>
+        <p><a href="mailto:labs@threesixtygiving.org">labs@threesixtygiving.org</a><br>
+        <a href="https://twitter.com/360Giving" target="_blank">@360Giving</a></p>
+      </div>
     </footer>
 
     <a class="by-line" href="http://ccmdesign.ca" target="_blank" title="Website designed and developed by ccm.design">by ccm.design</a>
