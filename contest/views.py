@@ -19,3 +19,7 @@ def resources(request):
 
 def submission(request):
     return render(request, 'contest/submission.html')
+
+
+def form(request):
+    return render(request, 'contest/form.html')
