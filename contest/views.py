@@ -4,7 +4,12 @@ from contest.models import Submission, Applicant
 
 
 def index(request):
-    return render(request, 'contest/index.html')
+    submissions = Submission.objects.all().order_by('-created_at')
+
+    ctx = {
+        'submissions': submissions,
+    }
+    return render(request, 'contest/index.html', ctx)
 
 
 def terms_and_conditions(request):
