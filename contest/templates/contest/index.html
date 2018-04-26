@@ -21,9 +21,9 @@
 
   <body>
     <nav class="main-nav">
-      <a class="" href="{% url 'contest_resources' %}">Resources</a>
-      <a class="" href="{% url 'contest_faq' %}">FAQ</a>
-      <a class="" href="{% url 'contest_terms_and_conditions' %}">T&C</a>
+      <div><a class="" href="{% url 'contest_resources' %}">Resources</a></div>
+      <div><a class="" href="{% url 'contest_faq' %}">FAQ</a></div>
+      <div><a class="" href="{% url 'contest_terms_and_conditions' %}">T&C</a></div>
     </nav>
 
     <main>
@@ -32,6 +32,7 @@
       <h1>Digging<br> the Data</h1>
       <h2><span>360Giving</span><br> <span>Data Visualisation</span><br> <span>Challenge</span></h2>
       <h3><span>Enter our prize challenge</span><br> <span>and your visualisation could win</span><br> <span>thousands of pounds</span></h3>
+      <!-- <a href="#" class="button">Submit Project</a> -->
     </div>
  </section>
 
@@ -73,6 +74,12 @@
       <p>The closing date for entries is 15<sup>th</sup> July. Winners will be announced by 31<sup>st</sup> August 2018.</p>
     </div>
   </section>
+
+  <!-- <section id="participate-button" class="page-section  page-section--red">
+    <div class="wrapper">
+      <a class="button" href="#">Submit Project</a>
+    </div>
+  </section> -->
 
   <!-- THIS PART ONLY SHOWS IF WE HAVE PROJECTS IN THE DATABASE -->
 
@@ -154,8 +161,7 @@
         <div>
           <img src="/static/images/360giving-logo.png" alt="360Giving">
         </div>
-        <p><a href="mailto:labs@threesixtygiving.org">labs@threesixtygiving.org</a><br>
-        <a href="https://twitter.com/360Giving" target="_blank">@360Giving</a></p>
+        <p><a href="mailto:labs@threesixtygiving.org">labs@threesixtygiving.org</a> | <a href="https://twitter.com/360Giving" target="_blank">@360Giving</a></p>
       </div>
     </footer>
 
