@@ -1,6 +1,6 @@
 from django.urls import path
 
-from contest.views import index, terms_and_conditions, faq, resources, submission, form
+from contest.views import index, terms_and_conditions, faq, resources, submission, submit
 
 
 urlpatterns = [
@@ -9,5 +9,5 @@ urlpatterns = [
     path('faq', faq, name='contest_faq'),
     path('resources', resources, name='contest_resources'),
     path('submission/<int:id>', submission, name='contest_submission'),
-    path('form', form, name='contest_form'),
+    path('submit', submit, name='contest_submit'),
 ]

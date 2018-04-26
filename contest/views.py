@@ -32,7 +32,7 @@ def submission(request, id):
     return render(request, 'contest/submission.html', ctx)
 
 
-def form(request):
+def submit(request):
     ctx = {}
     if request.method == "POST":
         submission = Submission(
@@ -65,4 +65,4 @@ def form(request):
 
         ctx = {}
 
-    return render(request, 'contest/form.html', ctx)
+    return render(request, 'contest/submit.html', ctx)
