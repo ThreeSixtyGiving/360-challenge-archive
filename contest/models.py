@@ -18,6 +18,8 @@ class Submission(models.Model):
     source_code_link = models.URLField()
     screenshot_link = models.URLField()
 
+    created_at = models.DateTimeField(auto_now_add=True)
+
 
 class Applicant(models.Model):
     submission = models.ForeignKey(Submission, related_name='applicants', on_delete=models.PROTECT)
@@ -27,3 +29,5 @@ class Applicant(models.Model):
     organization = models.TextField(null=True, blank=True)
     picture_link = models.URLField()
     github_account = models.URLField()
+
+    created_at = models.DateTimeField(auto_now_add=True)
