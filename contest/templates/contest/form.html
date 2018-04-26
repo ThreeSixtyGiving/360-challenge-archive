@@ -42,18 +42,19 @@
     </div>
   </header>
 
-  <form action="">
+  <form method="POST">
+    {% csrf_token %}
     <section class="project-info">
       <div class="wrapper">
         <h2>Submit Your Project</h2>
-          <input type="text" placeholder="Project Title">
-          <input type="text" placeholder="Short Description">
-          <textarea placeholder="Long Description"></textarea>
+          <input type="text" placeholder="Project Title" name="project-title" required>
+          <input type="text" placeholder="Short Description" name="short-description" required>
+          <textarea placeholder="Long Description" name="long-description" required></textarea>
 
           <div class="project-links">
-            <input type="url" placeholder="Visualization Link">
-            <input type="url" placeholder="Sourcecode Link">
-            <input type="url" placeholder="Screenshot Link">
+            <input type="url" placeholder="Visualization Link" name="visualization-link" required>
+            <input type="url" placeholder="Sourcecode Link" name="sourcecode-link" required>
+            <input type="url" placeholder="Screenshot Link" name="screenshot-link" required>
           </div>
       </div>
     </section>
@@ -62,25 +63,25 @@
         <h2>Team Info</h2>
         <div class="team-wrapper">
           <div class="team-member">
-            <input type="text" placeholder="Full Name">
-            <input type="text" placeholder="Job Title">
-            <input type="text" placeholder="Organization">
-            <input type="url" placeholder="Profile Image">
-            <input type="url" placeholder="Github Account">
+            <input type="text" placeholder="Full Name" name="full-name-1" required>
+            <input type="text" placeholder="Job Title" name="job-title-1" required>
+            <input type="text" placeholder="Organization" name="organization-1" required>
+            <input type="url" placeholder="Profile Image" name="profile-image-1" required>
+            <input type="url" placeholder="Github Account" name="github-account-1" required>
           </div>
           <div class="team-member">
-            <input type="text" placeholder="Full Name">
-            <input type="text" placeholder="Job Title">
-            <input type="text" placeholder="Organization">
-            <input type="url" placeholder="Profile Image">
-            <input type="url" placeholder="Github Account">
+            <input type="text" placeholder="Full Name" name="full-name-2">
+            <input type="text" placeholder="Job Title" name="job-title-2">
+            <input type="text" placeholder="Organization" name="organization-2">
+            <input type="url" placeholder="Profile Image" name="profile-image-2">
+            <input type="url" placeholder="Github Account" name="github-account-2">
           </div>
           <div class="team-member">
-            <input type="text" placeholder="Full Name">
-            <input type="text" placeholder="Job Title">
-            <input type="text" placeholder="Organization">
-            <input type="url" placeholder="Profile Image">
-            <input type="url" placeholder="Github Account">
+            <input type="text" placeholder="Full Name" name="full-name-3">
+            <input type="text" placeholder="Job Title" name="job-title-3">
+            <input type="text" placeholder="Organization" name="organization-3">
+            <input type="url" placeholder="Profile Image" name="profile-image-3">
+            <input type="url" placeholder="Github Account" name="github-account-3">
           </div>
           <div class="team-member team-member--add">
             <i class="material-icons">add</i>

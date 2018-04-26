@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
+
+from contest.models import Submission, Applicant
 
 
 def index(request):
@@ -17,9 +19,45 @@ def resources(request):
     return render(request, 'contest/resources.html')
 
 
-def submission(request):
-    return render(request, 'contest/submission.html')
+def submission(request, id):
+    ctx = {
+        'id': id,
+    }
+
+    return render(request, 'contest/submission.html', ctx)
 
 
 def form(request):
-    return render(request, 'contest/form.html')
+    ctx = {}
+    if request.method == "POST":
+        submission = Submission(
+            question=1,
+            title=request.POST.get('project-title'),
+            short_description=request.POST.get('short-description'),
+            long_description=request.POST.get('long-description'),
+            visualization_link=request.POST.get('visualization-link'),
+            source_code_link=request.POST.get('sourcecode-link'),
+            screenshot_link=request.POST.get('screenshot-link'),
+        )
+        submission.save()
+
+        for key, value in dict(request.POST).items():
+            if not (key.startswith('full-name-') and value and value[0]):
+                continue
+
+            index = key.replace('full-name-', '')
+
+            Applicant(
+                submission=submission,
+                full_name=request.POST.get("full-name-{}".format(index)),
+                jobtitle=request.POST.get("job-title-{}".format(index)),
+                organization=request.POST.get("organization-{}".format(index)),
+                picture_link=request.POST.get("profile-image-{}".format(index)),
+                github_account=request.POST.get("github-account-{}".format(index)),
+            ).save()
+
+        return redirect(reverse('contest_submission', args=(submission.id, )))
+
+        ctx = {}
+
+    return render(request, 'contest/form.html', ctx)

@@ -26,5 +26,4 @@ class Applicant(models.Model):
     jobtitle = models.TextField()
     organization = models.TextField(null=True, blank=True)
     picture_link = models.URLField()
-    # in the "join" username limit seems to be 39
-    github_username = models.CharField(max_length=64, null=True, blank=True)
+    github_account = models.URLField()
