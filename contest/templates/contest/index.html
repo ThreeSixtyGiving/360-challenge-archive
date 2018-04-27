@@ -67,73 +67,27 @@
 
   <!-- TODO(waltton): add projects here -->
 
-  <!-- <section class="projects">
-    <div class="wrapper">
-      <h2>Projects</h2>
-      <div class="card-container">
+  {% if submissions %}
+    <section class="projects">
+      <div class="wrapper">
+        <h2>Projects</h2>
+        <div class="card-container">
 
-        <div class="card card--orange">
-          <div class="card__info">
-            <h3>Project Title</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, modi reprehenderit rerum sed asperiores minima recusandae maior</p>
-          </div>
+          {% for submission in submissions %}
+            <a href="{% url 'contest_submission' submission.id %}" class="card card--orange" style="background-image: url('{{ submission.screenshot_link }}');">
+              <div class="card__info">
+                <h3>{{ submission.title }}</h3>
+                <p>{{ submission.short_description }}</p>
+              </div>
+            </a>
+          {% endfor %}
+
         </div>
-
-        <div class="card card--orange">
-          <div class="card__info">
-            <h3>Project Title</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, modi reprehenderit rerum sed asperiores minima recusandae maior</p>
-          </div>
-        </div>
-
-        <div class="card card--orange">
-          <div class="card__info">
-            <h3>Project Title</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, modi reprehenderit rerum sed asperiores minima recusandae maior</p>
-          </div>
-        </div>
-
-        <div class="card card--orange">
-          <div class="card__info">
-            <h3>Project Title</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, modi reprehenderit rerum sed asperiores minima recusandae maior</p>
-          </div>
-        </div>
-
-        <div class="card card--orange">
-          <div class="card__info">
-            <h3>Project Title</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, modi reprehenderit rerum sed asperiores minima recusandae maior</p>
-          </div>
-        </div>
-
-        <div class="card card--orange">
-          <div class="card__info">
-            <h3>Project Title</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, modi reprehenderit rerum sed asperiores minima recusandae maior</p>
-          </div>
-        </div>
-
-        <div class="card card--orange">
-          <div class="card__info">
-            <h3>Project Title</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, modi reprehenderit rerum sed asperiores minima recusandae maior</p>
-          </div>
-        </div>
-
-        <div class="card card--orange">
-          <div class="card__info">
-            <h3>Project Title</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, modi reprehenderit rerum sed asperiores minima recusandae maior</p>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section> -->
+    </section>
+  {% endif %}
 
-  <!-- <script src="/static/js/vendor/sketch.min.js"></script> -->
-  <script src="/static/js/vendor/sketch.js"></script>
+  <script src="/static/js/vendor/sketch.min.js"></script>
   <script src="/static/js/particles.js"></script>
 
 </main>
