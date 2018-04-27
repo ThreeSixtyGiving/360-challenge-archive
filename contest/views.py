@@ -1,3 +1,5 @@
+from urllib.parse import quote_plus
+
 from django.http import HttpResponseNotFound
 from django.shortcuts import render, redirect, reverse
 
@@ -30,8 +32,12 @@ def submission(request, id):
     if not submission:
         return HttpResponseNotFound()
 
+    tweet_msg = submission.short_description + ' #DiggingTheData bit.ly/2HywPyw'
+    tweet_msg = quote_plus(tweet_msg)
+
     ctx = {
         'submission': submission,
+        'tweet_msg': tweet_msg,
     }
 
     return render(request, 'contest/submission.html', ctx)
