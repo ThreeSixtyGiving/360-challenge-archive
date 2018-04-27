@@ -795,7 +795,8 @@ li {
     width: 75%;
     padding-bottom: 44%;
     margin: 0 12.5%;
-    background-size: cover; }
+    background-size: cover;
+    background-position: center; }
     @media (min-width: 64.063em) {
       .project-preview__upload {
         margin: 3% 12.5%; } }
