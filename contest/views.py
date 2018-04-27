@@ -27,6 +27,10 @@ def resources(request):
     return render(request, 'contest/resources.html')
 
 
+def thanks(request):
+    return render(request, 'contest/thanks.html')
+
+
 def submission(request, id):
     submission = Submission.objects.filter(id=id).prefetch_related('applicants').first()
     if not submission:
@@ -72,7 +76,7 @@ def submit(request):
                 github_account=request.POST.get("github-account-{}".format(index)),
             ).save()
 
-        return redirect(reverse('contest_submission', args=(submission.id, )))
+        return redirect(reverse('contest_thanks'))
 
         ctx = {}
 

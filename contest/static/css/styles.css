@@ -158,6 +158,23 @@ li {
   #footer p {
     margin: 0 40px 0 100px;
     text-align: left; }
+    @media (max-width: 40em) {
+      #footer p {
+        text-align: center;
+        margin: 40px 0 0; } }
+    @media (max-width: 40em) {
+      #footer p span {
+        display: none; } }
+
+.align-center.align-center {
+  text-align: center; }
+
+.thanks-page .page-section {
+  min-height: 56.6vh; }
+.thanks-page .big-title {
+  margin-top: 15vh; }
+.thanks-page h2 {
+  margin-top: 0 !important; }
 
 .main-nav {
   position: absolute;

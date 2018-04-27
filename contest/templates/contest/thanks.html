@@ -1,0 +1,47 @@
+{% extends 'contest/base.html' %}
+
+
+{% block content %}
+    <nav class="main-nav">
+      <a class="" href="{% url 'contest_resources' %}">Resources</a>
+      <a class="" href="{% url 'contest_faq' %}">FAQ</a>
+      <a class="" href="{% url 'contest_terms_and_conditions' %}">T&C</a>
+    </nav>
+
+    <main class="thanks-page">
+  <div class="page-title">
+    <div class="wrapper">
+      <h1><a href="{% url 'contest_index' %}">Digging the Data</a></h1>
+    </div>
+  </div>
+
+  <header class="page-section page-section--blue">
+    <div class="wrapper">
+      <a id="back-button" href="{% url 'contest_index' %}" class="button button--clean">
+        <i class="material-icons">arrow_back</i> Back
+      </a>
+    </div>
+    <div class="wrapper">
+      <h1 class="big-title align-center">Thanks!</h1>
+      <h2 class="align-center">Submission successful</h2>
+
+  </header>
+</main>
+
+
+
+
+    <footer id="footer">
+      <div class="wrapper panel-container">
+        <div>
+          <img src="/static/images/360giving-logo.png" alt="360Giving">
+        </div>
+        <p><a href="mailto:labs@threesixtygiving.org">labs@threesixtygiving.org</a><span> |</span> <a href="https://twitter.com/360Giving" target="_blank">@360Giving</a></p>
+      </div>
+    </footer>
+
+    <a class="by-line" href="http://ccmdesign.ca" target="_blank" title="Website designed and developed by ccm.design">by ccm.design</a>
+
+    <script src="/static/vendor/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/scripts.js"></script>
+{% endblock %}
