@@ -460,7 +460,8 @@ li {
     top: 0; }
   .card__info {
     padding: 20px;
-    color: white; }
+    color: white;
+    width: 100%; }
     @media (min-width: 40.063em) {
       .card__info {
         position: absolute;
@@ -468,7 +469,7 @@ li {
         padding-bottom: 300px; } }
     @media (min-width: 64.063em) {
       .card__info {
-        top: 300px;
+        top: 265px;
         height: 100%; } }
     .card__info h3 {
       text-align: left;
