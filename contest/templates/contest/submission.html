@@ -40,21 +40,21 @@
       </a>
     </div>
     <div class="project-preview">
-      <div class="project-preview__upload" style="background-image: url('images/35fe981bc2952902d5188679a2dbd592.jpg');" alt=""></div>
+      <div class="project-preview__upload" style="background-image: url('{{ submission.screenshot_link }}');" alt=""></div>
     </div>
     <div class="wrapper panel-container">
       <div class="panel panel--2">
         <!-- PROJECT TITLE -->
-        <h1 class="big-title">Project Title</h1>
+        <h1 class="big-title">{{ submission.title }}</h1>
         <h3>360Giving Data Visualisation Challenge</h3>
         <p class="tweet-msg">
           <svg role="img" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg"><path d="M679 239s-21 34-55 57c7 156-107 329-314 329-103 0-169-50-169-50s81 17 163-45c-83-5-103-77-103-77s23 6 50-2c-93-23-89-110-89-110s23 14 50 14c-84-65-34-148-34-148s76 107 228 116c-22-121 117-177 188-101 37-6 71-27 71-27s-12 41-49 61c30-2 63-17 63-17z"/></svg>
-          <!-- SHORT DESCRIPTION -->Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus qui eligendi tenetur, voluptas ipsam perferendis atque placeat quisquam.</p>
+          <!-- SHORT DESCRIPTION -->{{ submission.short_description }}</p>
         <div class="social-media">
           <!-- LINKS FROM SUBMISSION -->
-          <a href="#" class="social-media__icon" title="Project Github" target="_blank"><i class="material-icons">code</i></a>
+          <a href="{{ submission.source_code_link }}" class="social-media__icon" title="Project Github" target="_blank"><i class="material-icons">code</i></a>
           <!-- LINKS FROM SUBMISSION -->
-          <a href="#" class="social-media__icon social-media--website" title="Project Website" target="_blank"><i class="material-icons">link</i></a>
+          <a href="{{ submission.visualization_link }}" class="social-media__icon social-media--website" title="Project Website" target="_blank"><i class="material-icons">link</i></a>
         </div>
       </div>
       <div class="panel"></div>
@@ -63,35 +63,20 @@
   <section class="page-section long-description">
     <div class="wrapper">
       <!-- LONG DESCRIPTION -->
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime praesentium qui, error animi, vitae odit atque aspernatur hic architecto aliquid laborum omnis dolores, ipsum modi soluta blanditiis ipsa dolorum a. Lorem ipsum dolor sit amet, consectetur adipisicing elit. In inventore beatae a fugit quo sapiente, amet similique alias dolorum. Maxime mollitia ad vero nostrum sit corrupti at, assumenda unde aut. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae amet dolore voluptate suscipit! Molestias dolore incidunt ullam, quos quis eius molestiae, libero repellendus dolores labore distinctio consectetur. Dolor, voluptates, quia!</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime praesentium qui, error animi, vitae odit atque aspernatur hic architecto aliquid laborum omnis dolores, ipsum modi soluta blanditiis ipsa dolorum a. Lorem ipsum dolor sit amet, consectetur adipisicing elit. In inventore beatae a fugit quo sapiente, amet similique alias dolorum. Maxime mollitia ad vero nostrum sit corrupti at, assumenda unde aut. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae amet dolore voluptate suscipit! Molestias dolore incidunt ullam, quos quis eius molestiae, libero repellendus dolores labore distinctio consectetur. Dolor, voluptates, quia!</p>
-
+      <p>{{ submission.long_description }}</p>
     </div>
   </section>
   <section class="page-section project-team page-section--red">
-    <div class="person">
-      <div class="person__pic" style="background-image: url('images/35fe981bc2952902d5188679a2dbd592.jpg');"></div>
-      <h2>Mor Rubinstein</h2>
-      <h3>Data Labs & Learning Manager</h3>
-      <h4>360Giving</h4>
-    </div>
-    <div class="person">
-      <div class="person__pic" style="background-image: url('images/35fe981bc2952902d5188679a2dbd592.jpg');"></div>
-      <h2>Mor Rubinstein</h2>
-      <h3>Data Labs & Learning Manager</h3>
-      <h4>360Giving</h4>
-    </div>
-    <div class="person">
-      <div class="person__pic" style="background-image: url('images/35fe981bc2952902d5188679a2dbd592.jpg');"></div>
-      <h2>Mor Rubinstein</h2>
-      <h3>Data Labs & Learning Manager</h3>
-      <h4>360Giving</h4>
-    </div>
+    {% for applicant in submission.applicants.all %}
+      <div class="person">
+        <div class="person__pic" style="background-image: url('{{ applicant.picture_link }}');"></div>
+        <h2>{{ applicant.full_name }}</h2>
+        <h3>{{ applicant.jobtitle }}</h3>
+        <h4>{{ applicant.organization }}</h4>
+      </div>
+    {% endfor %}
   </section>
 </main>
-
-
 
 
     <footer id="footer">

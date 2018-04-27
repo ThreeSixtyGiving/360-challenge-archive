@@ -1,3 +1,4 @@
+from django.http import HttpResponseNotFound
 from django.shortcuts import render, redirect, reverse
 
 from contest.models import Submission, Applicant
@@ -25,8 +26,12 @@ def resources(request):
 
 
 def submission(request, id):
+    submission = Submission.objects.filter(id=id).prefetch_related('applicants').first()
+    if not submission:
+        return HttpResponseNotFound()
+
     ctx = {
-        'id': id,
+        'submission': submission,
     }
 
     return render(request, 'contest/submission.html', ctx)
