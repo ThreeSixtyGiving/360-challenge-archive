@@ -42,7 +42,7 @@
     </div>
   </header>
 
-  <form method="POST">
+  <form method="POST" id="js-form">
     {% csrf_token %}
     <section class="project-info">
       <div class="wrapper">
@@ -61,42 +61,72 @@
     <section class="team">
       <div class="wrapper">
         <h2>Team Info</h2>
-        <div class="team-wrapper">
-          <div class="team-member">
-            <input type="text" placeholder="Full Name" name="full-name-1" required>
-            <input type="text" placeholder="Job Title" name="job-title-1" required>
-            <input type="text" placeholder="Organization" name="organization-1" required>
-            <input type="url" placeholder="Profile Image" name="profile-image-1" required>
-            <input type="url" placeholder="Github Account" name="github-account-1" required>
-          </div>
-          <div class="team-member">
-            <input type="text" placeholder="Full Name" name="full-name-2">
-            <input type="text" placeholder="Job Title" name="job-title-2">
-            <input type="text" placeholder="Organization" name="organization-2">
-            <input type="url" placeholder="Profile Image" name="profile-image-2">
-            <input type="url" placeholder="Github Account" name="github-account-2">
-          </div>
-          <div class="team-member">
-            <input type="text" placeholder="Full Name" name="full-name-3">
-            <input type="text" placeholder="Job Title" name="job-title-3">
-            <input type="text" placeholder="Organization" name="organization-3">
-            <input type="url" placeholder="Profile Image" name="profile-image-3">
-            <input type="url" placeholder="Github Account" name="github-account-3">
-          </div>
-          <div class="team-member team-member--add">
+        <div id="js-team-wrapper" class="team-wrapper">
+          <div id="js-add-bttn" class="team-member team-member--add" style="cursor: pointer;">
             <i class="material-icons">add</i>
             <span>Add Team Member</span>
           </div>
         </div>
       </div>
-
       <div class="wrapper form-controls">
         <input type="submit" class="button" value="Sumbit Project">
       </div>
+      <button type="submit" style="display: none" id="hidden-submit"></button>
     </section>
-
   </form>
 </main>
+
+    <div id="js-team-member-template" style="display: none">
+      <div class="team-member">
+        <div style="position: relative; display: __display__;">
+          <a class="js-close" data-id="__index__" style="position: absolute; right: 0px;" href="javascript:void(0)">
+            <i class="material-icons" data-id="__index__">close</i>
+          </a>
+        </div>
+        <input type="text" required placeholder="Full Name" name="full-name-__index__">
+        <input type="text" required placeholder="Job Title" name="job-title-__index__">
+        <input type="text" required placeholder="Organization" name="organization-__index__">
+        <input type="url" required placeholder="Profile Image" name="profile-image-__index__">
+        <input type="url" required placeholder="Github Account" name="github-account-__index__">
+      </div>
+    </div>
+
+    <script>
+      (function(){
+        var form = document.getElementById('js-form');
+        var addBttn = document.getElementById('js-add-bttn');
+        var template = document.getElementById('js-team-member-template');
+        var teamWrapper = document.getElementById('js-team-wrapper');
+
+        var index = 0;
+
+        function close(event) {
+          var i = event.target.getAttribute('data-id');
+          document.getElementById('js-team-member-' + i).remove();
+        }
+
+        function addTeamMember() {
+          var templateContent = template.children[0].innerHTML;
+          templateContent = templateContent.replace(/__index__/g, index, -1);
+          templateContent = templateContent.replace(/__display__/g, index === 0 ? 'none' : 'block', -1);
+
+          var tmp = document.createElement('div');
+          tmp.classList.add(template.children[0].classList);
+          tmp.id = 'js-team-member-' + index;
+          tmp.innerHTML = templateContent;
+
+          teamWrapper.insertBefore(tmp, addBttn);
+
+          tmp.querySelector('.js-close').addEventListener('click', close);
+
+          index += 1;
+        }
+
+        addBttn.addEventListener('click', addTeamMember);
+
+        addTeamMember();
+      })();
+    </script>
 
     <footer id="footer">
       <div class="wrapper panel-container">
