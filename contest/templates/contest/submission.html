@@ -70,7 +70,11 @@
     {% for applicant in submission.applicants.all %}
       <div class="person">
         <div class="person__pic" style="background-image: url('{{ applicant.picture_link }}');"></div>
-        <h2>{{ applicant.full_name }}</h2>
+        <h2>
+          <a href="{{ applicant.github_account }}" target=_blank>
+            {{ applicant.full_name }}
+          </a>
+        </h2>
         <h3>{{ applicant.jobtitle }}</h3>
         <h4>{{ applicant.organization }}</h4>
       </div>
