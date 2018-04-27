@@ -22,7 +22,7 @@ class Submission(models.Model):
 
 
 class Applicant(models.Model):
-    submission = models.ForeignKey(Submission, related_name='applicants', on_delete=models.PROTECT)
+    submission = models.ForeignKey(Submission, related_name='applicants', on_delete=models.CASCADE)
 
     full_name = models.TextField()
     jobtitle = models.TextField()
