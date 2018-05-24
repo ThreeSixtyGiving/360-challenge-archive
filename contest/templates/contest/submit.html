@@ -32,7 +32,7 @@
           <input type="text" placeholder="Project Title" name="project-title" required>
           <input type="text" placeholder="Short Description" name="short-description" maxlength="109" required>
           <textarea placeholder="Long Description" name="long-description" required></textarea>
-          
+
           <div class="project-links">
             <input type="url" placeholder="Visualisation Link" name="visualization-link" required>
             <input type="url" placeholder="Sourcecode Link" name="sourcecode-link" required>
@@ -53,7 +53,13 @@
         </div>
       </div>
       <div class="wrapper form-controls">
-        <input type="submit" class="button" value="Submit Project">
+        <div style="display: flex">
+          <small style="text-align: left;">
+            By clicking ‘Submit Project’ you are agreeing to the Challenge Fund Terms and Conditions:
+            <a href="https://challenge.threesixtygiving.org/terms-and-conditions">https://challenge.threesixtygiving.org/terms-and-conditions</a>
+          </small>
+          <input type="submit" class="button" value="Submit Project">
+        </div>
       </div>
       <button type="submit" style="display: none" id="hidden-submit"></button>
     </section>
