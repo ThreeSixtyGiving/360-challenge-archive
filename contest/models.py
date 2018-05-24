@@ -18,6 +18,8 @@ class Submission(models.Model):
     source_code_link = models.URLField()
     screenshot_link = models.URLField()
 
+    contact_email = models.EmailField()
+
     created_at = models.DateTimeField(auto_now_add=True)
 
 

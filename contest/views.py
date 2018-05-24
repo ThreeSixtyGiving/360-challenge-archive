@@ -58,6 +58,7 @@ def submit(request):
             visualization_link=request.POST.get('visualization-link'),
             source_code_link=request.POST.get('sourcecode-link'),
             screenshot_link=request.POST.get('screenshot-link'),
+            contact_email=request.POST.get('contact-email'),
         )
         submission.save()
 
