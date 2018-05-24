@@ -1,0 +1,97 @@
+{% extends 'contest/base.html' %}
+
+
+{% block content %}
+<nav class="main-nav">
+  <div><a class="" href="{% url 'contest_resources' %}">Resources</a></div>
+  <div><a class="" href="{% url 'contest_faq' %}">FAQ</a></div>
+  <div><a class="" href="{% url 'contest_terms_and_conditions' %}">T&C</a></div>
+</nav>
+
+<main class="resources-page">
+  <div class="page-title">
+    <div class="wrapper">
+      <h1><a href="{% url 'contest_index' %}">Digging the Data</a></h1>
+    </div>
+  </div>
+
+  <header class="page-section page-section--blue">
+    <div class="wrapper">
+      <a id="back-button" href="{% url 'contest_index' %}" class="button button--clean">
+        <i class="material-icons">arrow_back</i> Back
+      </a>
+    </div>
+    <div class="wrapper">
+      <h2>How we use cookies</h2>
+  </header>
+
+  <section class="page-section page-section--light">
+      <div class="wrapper">
+          <p>
+            A cookie is a small file which asks permission to be placed on your computer's hard drive. Once you agree, the file is added and the cookie helps analyse web traffic or lets you know when you visit a particular site.
+          </p>
+          <p>
+            Cookies allow web applications to respond to you as an individual. The web application can tailor its operations to your needs, likes and dislikes by gathering and remembering information about your preferences. A cookie in no way gives us access to your computer or any information about you, other than the data you choose to share with us.
+          </p>
+          <p>
+            You can choose to accept or decline cookies. Most web browsers automatically accept cookies, but you can usually modify your browser setting to decline cookies if you prefer. This may prevent you from taking full advantage of the website.
+          </p>
+
+          <p>
+            In this website we use cookies to:
+            <ul>
+              <li style="list-style: circle;">Help us analyse how our website is used.</li>
+              <li style="list-style: circle;">To ensure other sites can’t “forge” requests.</li>
+              <li style="list-style: circle;">Remember your choices within the application, for your convenience.</li>
+            </ul>
+          </p>
+
+          <p>
+            We use Google Analytics to analyse usage of this website. This uses cookies to identify you (anonymously) as the same user, so that we can analyse our web traffic better. E.g. it allows us to count how many users we have, instead of just total page views or analyse what pages people commonly visit together.
+          </p>
+
+          <p>
+            If you do allow cookies to be used, Google Analytics uses 1st party cookies, set on the domain of this website (threesixtygiving).
+          </p>
+
+          <p>
+            Cookies created by Google Analytics start with:
+            <ul>
+              <li style="list-style: circle;">_ga</li>
+              <li style="list-style: circle;">_gali</li>
+              <li style="list-style: circle;">_gat_gtag_UA_#</li>
+              <li style="list-style: circle;">_gid</li>
+            </ul>
+          </p>
+
+          <p>
+            See <a href="https://support.google.com/analytics/answer/6004245">https://support.google.com/analytics/answer/6004245</a> for more information and how to opt out.
+          </p>
+          <p>
+            The website is built using Django and we use that framework to set the following cookies:
+            <ul>
+              <li style="list-style: circle;">csrftoken - to prevent cross site scripting attacks <a href="https://docs.djangoproject.com/en/2.0/ref/csrf/#how-it-works">https://docs.djangoproject.com/en/1.8/ref/csrf/#how-it-works</a>)</li>
+              <li style="list-style: circle;">sessionid - you will get this if you interact with the website, so that we can save the things you have done</li>
+            </ul>
+          </p>
+          <p>
+            If you choose not to accept these cookies the application may not work for you.
+          </p>
+      </div>
+  </section>
+</main>
+
+<footer id="footer">
+  <div class="wrapper panel-container">
+    <div>
+      <img src="/static/images/360giving-logo.png" alt="360Giving">
+    </div>
+    <p><a href="mailto:labs@threesixtygiving.org">labs@threesixtygiving.org</a> | <a href="https://twitter.com/360Giving" target="_blank">@360Giving</a></p>
+  </div>
+</footer>
+
+<a class="by-line" href="http://ccmdesign.ca" target="_blank" title="Website designed and developed by ccm.design">by ccm.design</a>
+
+<script src="/static/vendor/jquery-3.3.1.min.js"></script>
+<script src="/static/js/scripts.js"></script>
+{% endblock %}

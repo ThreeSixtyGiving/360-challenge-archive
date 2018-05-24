@@ -23,6 +23,10 @@ def faq(request):
     return render(request, 'contest/faq.html')
 
 
+def cookie_usage(request):
+    return render(request, 'contest/cookie-usage.html')
+
+
 def resources(request):
     return render(request, 'contest/resources.html')
 
