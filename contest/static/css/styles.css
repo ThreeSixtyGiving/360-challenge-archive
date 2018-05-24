@@ -503,6 +503,7 @@ li {
   outline: 0;
   transition: all .4s ease; }
 .form input[type='text'],
+.form input[type='email'],
 .form input[type='url'],
 .form textarea {
   box-sizing: border-box;
@@ -518,10 +519,12 @@ li {
   letter-spacing: 1px; }
   @media (max-width: 40em) {
     .form input[type='text'],
+        .form input[type='email'],
     .form input[type='url'],
     .form textarea {
       padding: 10px; } }
   .form input[type='text']:focus,
+    .form input[type='email']:focus,
   .form input[type='url']:focus,
   .form textarea:focus {
     border-color: #662584; }
