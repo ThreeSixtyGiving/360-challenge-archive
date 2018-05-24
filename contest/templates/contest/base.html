@@ -32,5 +32,20 @@
 
   <body>
     {% block content %}{% endblock %}
+    <div id="cookie-bar" style="display: none; position: fixed; bottom: 0px; background: white; text-align: center; width: 100%; padding: 15px;">
+      This site uses cookies: <a style="text-decoration: underline" href="{% url 'contest_cookie_usage' %}">Find out more</a>.
+      <a id="btt-ok-to-use-cookies" href="javascript:void(0)" class="button" style="margin: 0 15px;">Okay, thanks</a>
+    </div>
+    <script>
+      (function(){
+        if (document.cookie.indexOf('ok-to-use-cookies') === -1) {
+          document.getElementById('cookie-bar').style.display = 'block';
+        }
+        document.getElementById('btt-ok-to-use-cookies').addEventListener('click', function(){
+          document.cookie = 'ok-to-use-cookies=True;path=/';
+          document.getElementById('cookie-bar').style.display = 'none';
+        })
+      })();
+    </script>
   </body>
 </html>
