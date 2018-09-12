@@ -2,13 +2,23 @@ from urllib.parse import quote_plus
 
 from django.http import HttpResponseNotFound
 from django.shortcuts import render, redirect, reverse
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from contest.models import Submission, Applicant
 
 
 def index(request):
-    submissions = Submission.objects.all().order_by('-created_at')
+    submissions_list = Submission.objects.all().order_by('-created_at')
+    page = request.GET.get('page', 1)
+    paginator = Paginator(submissions_list, 6)
 
+    try:
+        submissions = paginator.page(page)
+    except PageNotAnInteger:
+        submissions = paginator.page(1)
+    except EmptyPage:
+        submissions = paginator.page(paginator.num_pages)
+    
     ctx = {
         'submissions': submissions,
     }

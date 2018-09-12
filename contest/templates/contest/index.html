@@ -71,10 +71,10 @@
     <section class="projects">
       <div class="wrapper">
         <h2>Projects</h2>
-        <div class="card-container">
+        <div class="card-container infinite-container">
 
           {% for submission in submissions %}
-            <a href="{% url 'contest_submission' submission.id %}" class="card card--orange" style="background-image: url('{{ submission.screenshot_link }}');">
+            <a href="{% url 'contest_submission' submission.id %}" class="card card--orange infinite-item" style="background-image: url('{{ submission.screenshot_link }}');">
               <div class="card__info">
                 <h3>{{ submission.title }}</h3>
                 <p>{{ submission.short_description }}</p>
@@ -83,6 +83,14 @@
           {% endfor %}
 
         </div>
+          
+        <div class="loading" style="display: none;">
+          Loading...
+        </div>
+          
+        {% if submissions.has_next %}
+          <a class="infinite-more-link" href="?page={{ submissions.next_page_number }}">More</a>
+        {% endif %}
       </div>
     </section>
   {% endif %}
@@ -104,5 +112,22 @@
     <a class="by-line" href="http://ccmdesign.ca" target="_blank" title="Website designed and developed by ccm.design">by ccm.design</a>
 
     <script src="/static/vendor/jquery-3.3.1.min.js"></script>
+    <script src="/static/vendor/jquery.waypoints.min.js"></script>
+    <script src="/static/vendor/infinite.min.js"></script>
     <script src="/static/js/scripts.js"></script>
+
+    <script>
+      $(function () { 
+        var infinite = new Waypoint.Infinite({
+          element: $('.infinite-container')[0],
+          onBeforePageLoad: function () {
+            $('.infinite-more-link').hide();
+            $('.loading').show();
+          },
+          onAfterPageLoad: function ($items) {
+            $('.loading').hide();
+          }
+        });
+      });
+    </script>
 {% endblock %}
