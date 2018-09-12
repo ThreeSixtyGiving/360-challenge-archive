@@ -858,14 +858,8 @@ li {
 .cookie-usage-content li {
   list-style: circle;
 }
-.loading{
-  background: #f4821f;
-  text-align: center;
-  color: #FFF;
-  font-weight: 300;
-}
 
-.infinite-more-link {
+.infinite-more-link, .loading {
   display: inline-block;
   background: #f4821f;
   text-align: center;
