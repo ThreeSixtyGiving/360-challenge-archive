@@ -74,7 +74,7 @@
         <div class="card-container infinite-container">
 
           {% for submission in submissions %}
-            <a href="{% url 'contest_submission' submission.id %}" class="card card--orange infinite-item" style="background-image: url('{{ submission.screenshot_link }}');">
+            <a href="{% url 'contest_submission' submission.id %}" class="card card--orange infinite-item" style="background-image: url('https://res.cloudinary.com/demo/image/fetch/w_460,h_362/{{ submission.screenshot_link }}');">
               <div class="card__info">
                 <h3>{{ submission.title }}</h3>
                 <p>{{ submission.short_description }}</p>
