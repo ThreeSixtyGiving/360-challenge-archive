@@ -854,3 +854,13 @@ li {
     font-size: 1.5rem; }
   .project-team .person h4 {
     color: rgba(0, 0, 0, 0.4); }
+
+.infinite-more-link, .loading {
+  display: inline-block;
+  background: #f4821f;
+  text-align: center;
+  color: #FFF;
+  font-weight: 300;
+  width: 100%;
+}
+
