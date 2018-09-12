@@ -1,7 +1,7 @@
-$(document).ready(function () {
-
+$(function () { 
   // Smooth Scrolling Function
-  $('a[href*=#]:not([href=#])').click(function () {
+  
+  $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function () {
       var $targ = $(this.hash),
           host1 = this.hostname,
           host2 = location.hostname,
